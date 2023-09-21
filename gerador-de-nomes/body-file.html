@@ -1,0 +1,81 @@
+<script type="text/javascript">
+// Função para embaralhar os nomes gerados
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
+function generateStoreNames(event) {
+  // Impede o comportamento padrão de recarregamento da página
+  if(event) {
+    event.preventDefault();
+  }
+	
+  const inputText = document.getElementById("form_input_btn").value;
+	// lista de palavras que vão ser usadas tanto no inicio do input do usuário, quanto após
+  const wordsToCombine = ["Ateliê", "Design", "Clube", "Signature", "Glamour", "Basic", "Concept", "Oficial", "Calçados", "Semi-joias", "Eletrônicos", "Lingerie", "Biquini", "Vibes", "Off", "Imagine", "Cósmeticos", "Premium", "Plus", "Prime", "Dreams", "Jóias", "Fun", "Lady", "Roupas Essenciais", "Absolute", "Sweet", "Gifts", "Alternative", "Make", "Bazar",  "Outlet", "Arte", "Office", "Box"];
+	
+  // lista de palavras que vão ser usadas apenas depois do input
+  const nomesDepois = ['& Co', '& Cia', 'Casa&Cia', "Roupas Plus Size", "Mimo"];
+  
+  // lista de palavras que vão ser usadas apenas antes do input
+	const nomesAntes = ["ABC do", "Brechó da", "Use", "Papelaria da"];
+ 
+  const nameDiv = document.querySelector(".generate_name");
+  nameDiv.innerHTML = "";
+
+  const combinedNames = [];
+
+  wordsToCombine.forEach((word) => {
+    combinedNames.push(`${inputText} ${word}`);
+    combinedNames.push(`${word} ${inputText}`);
+  });
+	nomesAntes.forEach((word) => {
+		combinedNames.push(`${word} ${inputText}`);
+	});
+	nomesDepois.forEach((word) => {
+		combinedNames.push(`${inputText} ${word}`);
+	});
+
+  shuffle(combinedNames);
+
+  combinedNames.forEach((combinedName) => {
+  const singleNameDiv = document.createElement('div');
+  singleNameDiv.className = 'two-columns';
+  
+  const column1 = document.createElement('div');
+  column1.className = 'column1';
+  column1.textContent = combinedName;
+
+  const column2 = document.createElement('div');
+  column2.className = 'column2';
+
+// Cria o botão para a coluna 2
+const btn = document.createElement('button');
+
+// Adiciona o texto do botão, basta mudar o Registrar para o que você desejar
+btn.appendChild(document.createTextNode('Registrar '));
+
+// Adiciona um icone da Biblioteca font-awesome 
+const iconSpan = document.createElement('span');
+iconSpan.className = 'fa-sharp fa-solid fa-arrow-right'; // substitua pela classe do ícone desejado
+iconSpan.style.marginLeft = '5px'; 
+
+btn.appendChild(iconSpan);
+
+btn.onclick = function() {
+  window.location.href = 'https://www.exemplo.com'; // Url do botão
+};
+
+column2.appendChild(btn);
+
+  singleNameDiv.appendChild(column1);
+  singleNameDiv.appendChild(column2);
+
+  nameDiv.appendChild(singleNameDiv);
+});
+}
+</script>
