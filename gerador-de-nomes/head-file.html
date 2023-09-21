@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    .generate_name {
+        margin-top:78px;
+    }
+    .two-columns {
+      display: flex;
+      justify-content: space-between;
+      border-radius: 20px;
+      padding: 31px 23px;
+      width: 48%;
+      margin-top: 20px;
+      align-items: center;
+      background-color: #fff;
+    }
+    @media (max-width: 768px){
+        .two-columns {
+            max-width: 400px;
+            min-width: 250px;
+        }
+    }
+    @media (max-width: 599px){
+        .two-columns {
+            width: 100%;
+            max-width: 550px;
+            min-width: 300px;
+        }
+        #nameForm input {
+            width: 100%!important;
+            max-width: 599px;
+            min-width: 300px;
+        }
+        #nameForm button {
+            width: 100%!important;
+            max-width: 599px;
+            min-width: 300px;
+        }
+    }
+    .column1, .column2 {
+      flex: 1;
+    }
+    .column1 {
+        text-align: left;
+        color: #053C4D;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 138%;
+    }
+    .column2 {
+      text-align: right;
+    }
+    
+    .column2 button{
+        padding: 16px 32px;
+        border-radius: 596.552px;
+        background-color: #053C4D;
+        border-style: none;
+    }
+    
+    .generate_name {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #nameForm label {
+        color: #FFF;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 138%; /* 41.4px */
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    #nameForm {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    #nameForm button {
+        width: 29%;
+        font-weight: bold;
+        background-color: #053C4D;
+        border:none;
+        border-radius: 1000px;
+        padding: 32px 50px 32px 50px;
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 138%; /* 41.4px */
+        min-width: 290px;
+        margin-top: 10px;
+    }
+    
+    #nameForm input {
+        width: 69%;
+        border-radius: 1000px;
+        border-style: none;
+        padding: 32px 50px;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 138%; /* 30.36px */
+    }
+    
+    #nameForm input::placeholder {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 138%; /* 30.36px */
+        color: #B0B0B0;
+    }
+</style>
