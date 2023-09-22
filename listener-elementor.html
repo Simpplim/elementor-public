@@ -1,0 +1,21 @@
+<script>
+jQuery( document ).ready(function( $ ){
+    jQuery( document ).on('submit_success', function(){
+        var inputs = document.querySelectorAll('input');
+        var inputValues = {};
+
+        for (var i = 0; i < inputs.length; i++) {
+            var nameAttribute = inputs[i].getAttribute('name');
+            if (nameAttribute) {
+                inputValues[nameAttribute] = inputs[i].value;
+            }
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            'event': 'elementorFormSubmitted',
+            'formData': inputValues
+        });
+    });
+});
+</script>
